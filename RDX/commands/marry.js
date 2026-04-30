@@ -86,7 +86,7 @@ module.exports.run = async ({ api, event, Users, Currencies, args }) => {
   const botID = api.getCurrentUserID();
 
   try {
-    const COST = 10;
+    const COST = 0;
     const charge = await chargeUser(Currencies, senderID, COST);
     if (!charge.success) {
       return api.sendMessage(`❌ Aapke paas ${COST} coins nahi hain.\n💰 Required: ${COST} coins\n💵 Your Total: ${charge.total || 0} coins`, threadID, messageID);
